@@ -1,0 +1,43 @@
+server:
+  port: ${SERVER_PORT:8080}
+  shutdown: graceful
+
+spring:
+  application:
+    name: observastack
+
+info:
+  app:
+    name: ObservaStack
+    version: 0.1.0
+    description: Observability case for APIs, metrics, logs, health checks, dashboards and simulated alerts.
+
+observastack:
+  alerts:
+    latency-threshold-ms: ${ALERT_LATENCY_THRESHOLD_MS:350}
+    error-rate-threshold: ${ALERT_ERROR_RATE_THRESHOLD:0.05}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,loggers
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: observastack
+      company: jrs-software
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+        observastack.api.latency: true
+      percentiles:
+        http.server.requests: 0.5,0.95,0.99
+        observastack.api.latency: 0.5,0.95,0.99
+
+logging:
+  level:
+    root: ${LOG_LEVEL:INFO}
+    br.com.jrssoftware.observastack: ${LOG_LEVEL:INFO}

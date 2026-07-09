@@ -1,0 +1,9 @@
+target/
+.idea/
+.vscode/
+*.iml
+.DS_Store
+.env
+*.log
+benchmark/results/*.json
+benchmark/results/*.html

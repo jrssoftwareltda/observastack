@@ -1,0 +1,20 @@
+groups:
+  - name: observastack-alerts
+    rules:
+      - alert: ObservaStackHighLatency
+        expr: histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket[1m])) by (le, uri)) > 0.35
+        for: 30s
+        labels:
+          severity: warning
+        annotations:
+          summary: "High p95 latency detected"
+          description: "p95 latency is above 350ms for at least 30 seconds."
+
+      - alert: ObservaStackActiveSimulatedAlert
+        expr: observastack_active_alerts > 0
+        for: 10s
+        labels:
+          severity: warning
+        annotations:
+          summary: "Simulated alert is active"
+          description: "The API simulated an operational incident for case demonstration."

@@ -1,0 +1,38 @@
+{
+  "slug": "observastack",
+  "title": "ObservaStack",
+  "category": "DevOps & Observability",
+  "tagline": "Observability for production-grade APIs.",
+  "description": "A DevOps case demonstrating health checks, Prometheus metrics, structured logs, simulated alerts, Grafana dashboard provisioning and before/after API optimization comparison.",
+  "businessValue": "Helps teams understand API health, latency, errors and operational risks with measurable production signals.",
+  "stack": [
+    "Java 21",
+    "Spring Boot",
+    "Actuator",
+    "Micrometer",
+    "Prometheus",
+    "Grafana",
+    "Docker",
+    "Docker Compose",
+    "GitHub Actions",
+    "Trivy"
+  ],
+  "highlights": [
+    "Custom /health endpoint",
+    "Prometheus-compatible metrics",
+    "JSON structured logs",
+    "Simulated operational alerts",
+    "Before/after optimization comparison",
+    "Static API dashboard",
+    "Grafana dashboard provisioning",
+    "CI with build, tests and security scans"
+  ],
+  "websiteCard": {
+    "label": "Monitoramento e Logs",
+    "title": "ObservaStack",
+    "summary": "Observabilidade para APIs com métricas, logs, alertas e dashboard.",
+    "links": {
+      "backendRepository": "https://github.com/jrssoftwareltda/observastack"
+    }
+  }
+}
